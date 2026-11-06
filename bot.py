@@ -19,7 +19,7 @@ DIRECT_DIARY_URL = "https://diary.e-schools.by/#/diary?tab=diary"
 SESSION_FILE = "state.json"
 
 bot = Bot(token=TELEGRAM_BOT_TOKEN)
-dp = Dispatcher(bot)
+dp = Dispatcher()
 session_lock = asyncio.Lock()
 
 def get_main_keyboard() -> ReplyKeyboardMarkup:
