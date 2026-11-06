@@ -53,13 +53,14 @@ def get_safe_context_args() -> dict:
         return {"storage_state": SESSION_FILE}
     return {}
 
-@dp.message_handler(commands=['start'])    
-await message.answer(
+@dp.message_handler(commands=['start'])
+async def cmd_start(message: types.Message):
+    await message.answer(
         "👋 Привет! Бот готов к работе.\nВыбирай нужный раздел в меню ниже:", 
         reply_markup=get_main_keyboard()
-])
+    )
 
-@dp.message_handler(lambda message: ...)
+@dp.message_handler(lambda message: message.text in [
     "📊 Оценки за четверть", "⚙️ Аккаунт", "🔄 Войти заново"
 ])
 async def process_menu(message: types.Message):
