@@ -13,8 +13,7 @@ logging.basicConfig(
     handlers=[logging.StreamHandler()]
 )
 
-TELEGRAM_BOT_TOKEN = "8244350771:AAEEiUugK6NENyt64KrjG1dX46f2j7AurM4"  
-
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8244350771:AAE0-KxUTm5NJl3BTYo3Mc1ieddhjBAFJgU")  
 LOGIN_START_URL = "https://diary.e-schools.by/#/login"
 DIRECT_DIARY_URL = "https://diary.e-schools.by/#/diary?tab=diary"
 SESSION_FILE = "state.json"
